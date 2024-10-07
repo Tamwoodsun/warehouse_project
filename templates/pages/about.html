@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="showcase-inner" class="py-5 bg-warning">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">About MINISTORE</h1>
+          <p class="lead">
+            Specialize in mini-storage with up-to-date modern storage facilities
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--Mission Section-->
+  <section id="about" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h2 class="text-info">Our Mission</h2>
+          <p >
+            MINISTORE is committed to providing convenient services
+            to our customers around the clock. In addition to visiting
+            our branches to complete the storage procedures in person, 
+            customers can also arrange storage rentals online to save on
+            transportation costs. Customers can access their storage units 
+            and enjoy a range of facilities and value-added services at any 
+            time, including shared smart workspaces, activity and leisure 
+            areas, multi-purpose packing and organizing areas, and free 
+            advertising and communication boards. This allows customers to 
+            not only retrieve their stored items but also work and relax in 
+            the comfortable spaces provided by MINISTORE, fulfilling 
+            multiple space needs in one place. 
+          </p>
+           </div>
+        <div class="col-md-5">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src={% static "photo/Mini_Robot_inspired_storage_box.jpg"%}
+              width="40px"
+              height="350px"
+              alt="Our modern storage facilities"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Our modern storage facilities</h5>
+            </div>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  </div>
+<!--FAQ section-->
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h4>Frequently Asked Questions</h4>
+      <div id="simple-list-example" class="d-flex flex-column gap-2 list-group text-center">
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-1">Q1. Where is MINISTORE available?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-2">Q2. What are your hours of operation?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-3">Q3. Will my boxes/items be stored in a secure location? Where?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-4">Q4. Tell me about your moving team!</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-5">Q5. What is covered under your insurance policy?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-6">Q6. How do you protect my credit card information?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-7">Q7. How does billing work?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-8">Q8. What is the minimum storage period?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-9">Q9. Do you prorate refunds?</a>
+        <a class="p-2 rounded text-left list-group-item list-group-item-action" href="#list-item-10">Q10. How do I cancel or terminate my storage plan?</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <h4>Answers to Frequently Asked Questions</h4>
+      <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="100" data-bs-smooth-scroll="true" class="scrollspy-example">
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-1">
+          <h2>
+            Q1. Where is MINISTORE available?
+          </h2>
+        <p>A1. Our services are currently available in Hong Kong Island, Kowloon and New Territories. </p>
+        </div>
+        
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-2">
+          <h2>Q2. What are your hours of operation?</h2>
+        <p>A2. Our delivery time for By-the-Item and By-the-Square-Feet services are from 9am to 9pm and 9am to 6pm respectively, Monday to Sunday except for statutory holidays. Our customer service hours are available from 9am to 7pm, Monday to Sunday except statutory holidays. Our delivery time for By-the-Item and By-the-Square-Feet services are from 9am to 9pm and 9am to 6pm respectively, Monday to Sunday except for statutory holidays. Our customer service hours are available from 9am to 7pm, Monday to Sunday except statutory holidays. Feel free to e-mail us at support@boxful.com during our non-office hours and we'll get back to you as soon as possible.</p>
+        </div>
+        
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-3">
+          <h2>Q3. Will my boxes/items be stored in a secure location? Where?</h2>
+          <p>A3. Most definitely! The warehouse is not open to the public and is under 24-hour surveillance. We also ensure that boxes are tamper-proof and protected from the elements, such as fire, dust, humidity and water. </p>
+        </div>
+
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-4">
+          <h2>Q4. Tell me about your moving team!</h2>
+        <p>A4. Our moving team and warehouse staff have undergone thorough background check. Each member of the team goes through a rigorous training program to offer you the very best in customer service. </p>
+        </div>
+
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-5">
+        <h2>Q5. What is covered under your insurance policy?</h2>
+          <p>A5. We provide coverage for losses and damage to your property while in transit to and from the storage facility and while stored in our warehouse.
+            It does not protect against damages due to natural disasters such as floods, tidal waves, earthquakes, etc.
+
+        </p>
+          </div>
+        
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-6">
+          <h2>Q6. How do you protect my credit card information?</h2>
+            <p>A6. We ensure that your credit card details are 100% secured. In fact, we do not store any of your credit card information - when you submit your payment details they are encrypted.</p>
+        </div>
+
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-7">
+          <h2>Q7. How does billing work?</h2>
+            <p>A7. Billing is automatic so you don’t have to worry about it. After you have placed an order, your card is authorized but not charged. Once your boxes/items have made its way safely to our warehouse for storage, you'll be charged monthly the day after you start storing with us (i.e if your pick-up takes place on the 8th of August, your first payment will be on the 9th of August, and your next payment would take place on the 9th of September). We accept all major credit cards.</p>
+        </div>
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-8">
+          <h2>Q8. What is the minimum storage period?</h2>
+            <p>A8. Our minimum storage period is 3 months (excluding promotions).</p>
+        </div>
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-9">
+          <h2>Q9. Do you prorate refunds?</h2>
+            <p>A9. Storage is always charged in monthly increments - there are no prorated charges, weekly rates, or discount(s) for taking your things out of storage early.</p>
+        </div>
+        <div class="mt-4 p-5 bg-info text-white rounded" id="list-item-10">
+          <h2>Q10. How do I cancel or terminate my storage plan?</h2>
+            <p>A10. To cancel or terminate your plan, please make sure you retrieve all your boxes/items before your next billing date and you will only be charged until the end of your current billing month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>   
+{% endblock %}

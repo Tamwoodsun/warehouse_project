@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script type="text/javascript">
+  function openeye2(){
+    var valueofpassword2 = document.getElementById("password2");
+    if(valueofpassword2.type === "password"){
+        valueofpassword2.type= "text";
+        $("#eye-icon-status-2").removeClass("fa-solid fa-eye");
+        $("#eye-icon-status-2").addClass("fa-solid fa-eye-slash");
+    }
+    else{
+        valueofpassword2.type= "password";
+        $("#eye-icon-status-2").addClass("fa-solid fa-eye");
+        $("#eye-icon-status-2").removeClass("fa-solid fa-eye-slash");
+    }
+}
+function validatepassword(){
+    if(document.getElementById("password").value != document.getElementById("password2").value){
+      alert("Please enter the correct value of reset password column.");
+      return false;
+    }
+  }
+</script>
+<section id="register" class="bg-dark py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-warning text-white">
+              <h4><i class="fas fa-database"></i> Register</h4>
+            </div>
+            <div class="card-body">
+              <form action={% url 'register' %} method="POST" onsubmit="validatepassword()">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="first_name">First Name</label>
+                  <input
+                    type="text"
+                    name="first_name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last_name">Last Name</label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    required
+                  />
+                </div><label for="password1">Password</label>
+                <div class="form-group input-group mb-3">
+                  
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    required
+                  />
+                   <div class="input-group-append">
+                    <button onclick="openeye()" type="button">
+                      <i id="eye-icon-status" class="fa-solid fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+                <label for="password2">Confirm Password</label>
+                <div class="form-group input-group mb-3">
+                  
+                  <input
+                    type="password"
+                    name="password"
+                    id="password2"
+                    class="form-control"
+                    required
+                  />
+                   <div class="input-group-append">
+                    <button onclick="openeye2()" type="button">
+                      <i id="eye-icon-status-2" class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+                </div>
+                <input type="reset" value="Reset" class="btn btn-danger btn-block">
+                <input
+                  type="submit"
+                  value="Register"
+                  class="btn btn-success btn-block"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

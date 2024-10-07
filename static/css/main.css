@@ -1,0 +1,73 @@
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+    background-color: #777;
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+
+  #cardpic {
+    border-radius: 25% 25% 25% 25%;
+    padding: 50px;
+  }
+  #caroitemimg {
+    object-fit: contain;
+  }
+
+  ul#sns {
+    list-style-type: none;
+  }
+
+  ul#sns li {
+    display: inline;
+  }
+/*
+  button.button.is-link.modal-button{
+
+  position: relative;
+  left: 92%;
+  top: 93.41%;
+  bottom: 2.53%;
+}
+  */
+
+#google-maps-display{
+  height:100%;
+  width:100%;
+  max-width:100%;
+}
+
+#google-maps-display img{
+  max-height:none;
+  max-width:none!important;
+  background:none!important;
+}
+
+#google-map-frame{
+  height:100%;
+  width:100%;
+  border:0;
+}
+
+#google-map-block{
+  overflow:hidden;
+  resize:none;
+  max-width:100%;
+  width:1500px;
+  height:500px;
+}

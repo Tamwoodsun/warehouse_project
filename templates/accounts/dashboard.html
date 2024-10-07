@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <i class="fa-solid fa-circle-user fa-10x center" style="margin: 25%; font-size: 200px; position: relative;"></i>
+        </div>
+        <div class="col-7">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                  <h1 class="display-5 fw-bold">Welcome {{user.first_name}}</h1>
+                  <p>
+                    <table class="table table-striped">
+                      <thead>
+                          <tr>
+                              
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <th scope="row">Email: {{user.email}}</th>
+                              
+                          </tr>
+                      </tbody>
+                  </table>
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    {% if transfer %}
+    <h1 class=" text-capitalize ">Your warehouse record</h1>
+    <div class="row">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Warehouse Title</th>
+                    <th scope="col">Rent Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Rent Paid</th>
+                    <th scope="col">Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transfer_board in transfer %}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{transfer_board.warehouse}}</td>
+                    <td>{{transfer_board.rent_date}}</td>
+                    <td>{{transfer_board.end_date}}</td>
+                    <td>{{transfer_board.rent_paid}}</td>
+                    <td>{{transfer_board.note}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+    {% else %}
+   <h1>There aren't any records found.</h1>
+    {% endif %}
+</div>
+</div>
+
+{% endblock %}

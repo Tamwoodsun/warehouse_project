@@ -1,0 +1,72 @@
+{% load static %}
+<div id="top"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+    <div class="container">
+        <a class="navbar-brand">
+            <img src="{% static 'photo/MINISTORE.png' %}" class="logo" alt="" width="100px" height="100px"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li {% if '/' == request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+                    <a class="nav-link" href="{% url 'index' %}">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                </li>
+                <li {% if 'about' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+                    <a class="nav-link" href="{% url 'about' %}">
+                        <i class="fa-solid fa-circle-info"></i> About
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-list"></i> Region
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="{% url 'warehouse' %}" class="dropdown-item">All</a>
+                        <a href="{% url 'region' 'Hong Kong Island' %}" class="dropdown-item">Hong Kong Island</a>
+                        <a href="{% url 'region' 'Kowloon' %}" class="dropdown-item">Kowloon</a>
+                        <a href="{% url 'region' 'New Territories' %}" class="dropdown-item">New Territories</a>
+                    </div>
+                </li>
+                <li {% if 'service' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+                    <a class="nav-link" href="{% url 'service' %}">
+                        <i class="fa-solid fa-box-open"></i> Service
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li {% if 'dashboard' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+                    <a class="nav-link" href="/user/dashboard"> Welcome {{ user.username }} (dashboard)</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">
+                        <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i> Logout
+                    </a>
+                    <form action="{% url 'logout' %}" method="POST" id="logout">
+                        {% csrf_token %}
+                        <input type="hidden">
+                    </form>
+                </li>
+                {% else %}
+                <li {% if 'register' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+                    <a class="nav-link" href="{% url 'register' %}">
+                        <i class="fas fa-user-plus"></i> Register
+                    </a>
+                </li>
+                <li {% if 'login' in request.path %} class="nav-item mr-3 active" {% else %} class="nav-item mr-3" {% endif %}>
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <i class="fa-solid fa-key"></i> Login
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

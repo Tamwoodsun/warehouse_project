@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="about" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h2 class="text-info">Our Service</h2>
+            <h4 class="text-info">Wine Storage</h4>
+            <p>
+              Our red wine storage Hong Kong facility has obtained the prestigious “Wine Storage Management System Certification” from the Hong Kong Quality Assurance Agency. With precise temperature and humidity control, we maintain international standards for wine storage, ensuring their superior quality remains intact. You can always trust us to safeguard your treasured wine collection.
+            </p>
+           </div>
+        <div class="col-md-5">
+            <img
+            class="card-img-top"
+            src={% static "photo/photo_wine2.jpg" %}
+          />
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+          <h4 class="text-info">Bike Storage</h4>
+            <p>
+              Bicycle storage has always been a problem! This is because storing bicycles has always required attention to many details: for example: regular cleaning and oiling, balance when storing.  All of this may not be easy to take care of at home, so you may be able to afford a bike, but have no place to put it! MINISTORE locates close to MTR stations, is a great place for many people to store their bikes! 
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img
+            class="card-img-top"
+            src={% static "photo/photo_bike2.jpeg" %}
+          />
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+              <h4 class="text-info">Document Transportation Service</h4>
+                <p>
+                  MINISTORE has its own fleet of dedicated fleet to provide timely and reliable document transportation services. Our staff are professionally and rigorously trained, enthusiastic, responsible, friendly and courteous, and serve our customers in a committed and responsible manner.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img
+                class="card-img-top"
+                src={% static "photo/photo_document2.jpeg" %}
+              />
+            </div>
+            </div>
+  </section>
+
+{% endblock %}

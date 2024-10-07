@@ -1,0 +1,27 @@
+{% extends 'admin/base.html' %}
+
+{% load static  %}
+
+{% block branding %}
+
+
+
+<h1 id="head">
+    <img 
+    src="{% static 'photo/MINISTORE.png' %}" 
+    alt="BC Real Estate"
+    height="50" 
+    width="60" 
+    class="brand_img"/>
+    <span>MINI STORAGE</span>
+</h1>
+
+
+
+    {% endblock %}
+
+    <! -- add CSS style -->
+
+    {% block extrastyle %} 
+    <link rel="stylesheet" href={% static 'css/admin.css' %} />
+    {% endblock %}

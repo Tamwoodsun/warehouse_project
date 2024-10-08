@@ -1,4 +1,8 @@
 # selfprojectdjango
+Team members: Liu Chak Tin 
+              Siu Wan Cheuk
+              Tam Wood Sun
+              Ko Kin Keung
 
 # Description
 This is a basic warehouse management project, which is created by using ORM models , PostgreSQL and Python Django framework. 
@@ -15,9 +19,9 @@ PostgreSQL: 14.13
 Admin can edit, delete, make any modification of records from the database.
 They can also choose to list out the warehouse whether its storage quota is full or not.
 ## Registered User 
-Registered User can view the orders, including when and where to rent
+Registered User can view their orders record in Dashboard page after login
 ## Unregistered User
-Unregistered user can only view the ,but cannot access the 
+Unregistered user can only view information from the web-site.
 
 # Overview of the models
 
@@ -28,35 +32,24 @@ curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --d
 
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/jammy pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
 
-apt list --upgradable
-sudo apt install pgadmin4
-sudo -u postgres psql
+apt list --upgradable sudo apt install pgadmin4 sudo -u postgres psql
+
+It is assumed that you have installed pgadmin4 App.
+
+Please input the following in terminal: sudo -u postgres psql -U postgres Then you will be asked to provide your Ubuntu password. Next type "CREATE DATABASE ...... OWNER POSTGRES " in the terminal. Typing "\q" whether the database is existed on the table or not.
 
 You are advised to make connection and changes in the DATABASE array from the path "newprojecttrial/settings.py".
 
-# How to run this django website framework?
-Please install the language based on the version applied in this project.
+For Example: DATABASES = { 'default': { 'ENGINE': 'django.db.backends.postgresql', 'NAME': '..........', 'USER': 'dbadmin', 'PASSWORD':'abc123!', 'HOST': 'localhost' } }
+
+Finally, "python manage.py makemigrations" and "python manage.py migrate" will help you develop the information structure on the database.
 
 You should type "pip freeze > requirements.txt" to install the python package.
 
 Then you run the server by typing "python manage.py runserver".
 
-# URL Path Planning
-## Example from Sir
-| Url      | App | REST Method | Description |
-| -------- | ---- | ----------- | --- |
-| admin    | None   | GET        | Admin Page    |
-| about    | Page     | GET        |  About Page  |
-| listings |   listings   |    GET         | Overview of Building    |
-| listings/<int:id> |  listings    | GET             | Building Specific Information    |
-| listings/?page=<number:int> | listings | POST | Show Building in pages
-| listings/search?<parameters:int> | listings | POST | Search Any Results
-| accounts     | accounts     | GET         |     |
-| accounts/login     | accounts     | POST         |  Registered User Login   |
-| accounts/register     | accounts     | GET         |  Create a user    |
-| accounts/dashboard | accounts     |   GET          | Dashboard of registered user    |
-| contacts     |  contacts    | GET         |     |
 
+# URL Path Planning
 ## Our Map
 | Url      | App | REST Method | Description |
 | -------- | ---- | ----------- | --- |
@@ -68,12 +61,10 @@ Then you run the server by typing "python manage.py runserver".
 | warehouses/<region:str> | warehouse   | GET | Show warehouses from that district |
 | warehouses/?page=<number:int> | warehouse | GET | Show warehouses in pages |
 | warehouse/<id:int> | warehouse   |    POST         |  Show independent warehouse record  |
-| transfer | transfer   |    GET         | show records  |
-| transfer/ | transfer |   | |
-| user | user | |
-| user/dashboard | user | GET | Show his record
-| user/login | user |POST | User Login
-| user/logout | | |
+
+| accounts/dashboard | accounts | GET | Show his record
+| accounts/login | accounts |POST | User Login
+| accounts/logout | | |
 
 
 

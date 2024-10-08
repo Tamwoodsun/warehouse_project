@@ -55,32 +55,30 @@
 </div>
 <div class="card-columns">
     <div class="card bg-warning">
-    <img src={% static "photo/build2.jpg" %} alt="" class="card-img img-fluid"  id="cardpic">
-    <h4 class="card-title text-center">Hong Kong Island</h4>
-    
-    <hr />
-      <a href="{% url 'warehouse' %}Hong_Kong_Island " class="btn btn-primary btn-block"
-        >Read More</a
-      >
-    </div>
-<div class="card bg-warning">
-    <img src={% static "photo/build4.jpg" %} alt="" class="card-img img-fluid"  id="cardpic">
-    <h4 class="card-title text-center">Kowloon</h4>
-    
-    <hr />
-      <a href="{% url 'warehouse' %}Kowloon" class="btn btn-primary btn-block"
-        >Read More</a
-      >
-    </div>
-<div class="card bg-warning">
-    <img src={% static "photo/build1.jpg" %} alt="" class="card-img img-fluid" id="cardpic">
-    <h4 class="card-title text-center">New Territories</h4>
-    
+    <img src="https://picsum.photos/500/400" alt="" class="card-img img-fluid"  id="cardpic">
+    <h4 class="card-title text-center">About</h4>
+    <h4 class="card-subtitle text-muted text-center">Card Subtitle</h4>
     <p class="card-text text-center">
-      <hr />
-      <a href="{% url 'warehouse' %}New_Territories" class="btn btn-primary btn-block"
-        >Read More</a
-      >
-    </div>
+        
+    </p>
+    <button class="btn btn-outline-primary btn-block" onclick="document.location='about'">Read More</button>
+</div>
+<div class="card bg-warning">
+    <img src="https://picsum.photos/500/400" alt="" class="card-img img-fluid"  id="cardpic">
+    <h4 class="card-title text-center">Services</h4>
+    <h4 class="card-subtitle text-muted text-center">Card Subtitle</h4>
+    <p class="card-text text-center">
+        
+    </p>
+    <button class="btn btn-outline-primary btn-block" onclick="document.location='service'">Read More</button>
+</div>
+<div class="card bg-warning">
+    <img src="https://picsum.photos/500/400" alt="" class="card-img img-fluid" id="cardpic">
+    <h4 class="card-title text-center">Service</h4>
+    <h4 class="card-subtitle text-muted text-center">Card Subtitle</h4>
+    <p class="card-text text-center">
+    </p>
+    <button class="btn btn-outline-primary btn-block">Read More</button>
+</div>
 </div>
 {% endblock %}

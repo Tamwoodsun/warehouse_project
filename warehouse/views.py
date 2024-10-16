@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Warehouse
 from transfer.models import Transfer
+from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -36,7 +37,7 @@ def show_region(request, region_name):
 #    context = {'warehouse': variable}
 #    return render(request, 'warehouse/warehouse.html', context)
 
-@login_required
+#@login_requiredS
 def processorder(request):
     if request.method == "POST":
         start_calendar = request.POST['startcalendar']
@@ -45,9 +46,14 @@ def processorder(request):
         warehouse_id = request.POST.get('idnum','')
         rent_price = request.POST['rentval']
         note_val = request.POST['note']
+        if request.user.is_authenticated:
+            user_id = request.user.id
+            messages.success(request, 'Your request has been submitted, our staff will get back to you soon')        
+            return redirect('/warehouse/'+ warehouse_id)
         transferitem = Transfer(warehouse=warehouse_id, note = note_val,user = user_id, rent_paid=rent_price,rent_date=start_calendar, end_date=end_calendar)
         transferitem.save()
-        return redirect("index")
+        
+        
     else:
         return render(request,'pages/exception/error_404.html') 
         

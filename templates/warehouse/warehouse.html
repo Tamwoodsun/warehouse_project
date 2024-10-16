@@ -53,10 +53,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action={% url 'processorder' %} method="POST" onSubmit="validate()">
+        <form action="{% url 'processorder' %}" method="POST">
           {% csrf_token %}
           {% if user.is_authenticated %}
-          <input type="hidden" name="user_id" value="">
+          <input type="hidden" name="user_id" value="{{user.id}}">
           {% else %}
           <input type="hidden" name="user_id" value="0" />
           {% endif %}
